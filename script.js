@@ -38,12 +38,37 @@ const teamMembers = [
 ]
 console.log(teamMembers);
 
-//* 2.
 
+//Ref
+const newNameData = document.getElementById('name');
+const newRoleData = document.getElementById('role');
+const newImageData = document.getElementById('image');
+const btnAddMember = document.getElementById('addMemberButton');
+
+//* 2.
  //Ref
 const teamContainer = document.querySelector('.team-container');
 
 layOutGen (teamMembers, teamContainer);
+
+//* 3.
+btnAddMember.addEventListener('click', function () {
+    teamContainer.innerHTML = '';
+
+    const newName = newNameData.value;
+    const newRole = newRoleData.value;
+    const newImage = newImageData.value;
+    
+    const newMember = {
+        name: `${newName}`,
+        role: `${newRole}`,
+        image: `${newImage}`,
+    };
+
+    teamMembers.push(newMember);
+
+    layOutGen (teamMembers, teamContainer);
+});
 
 /* 
 * FUNCTION
