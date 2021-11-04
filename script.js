@@ -36,22 +36,23 @@ const teamMembers = [
         role: 'Graphic Designer',
     },
 ]
-console.log(teamMembers);
 
-
-//Ref
-const newNameData = document.getElementById('name');
-const newRoleData = document.getElementById('role');
-const newImageData = document.getElementById('image');
-const btnAddMember = document.getElementById('addMemberButton');
 
 //* 2.
- //Ref
+//Ref
 const teamContainer = document.querySelector('.team-container');
 
 layOutGen (teamMembers, teamContainer);
 
+
 //* 3.
+//Ref
+const newNameData = document.getElementById('name');
+const newRoleData = document.getElementById('role');
+const newImageData = document.getElementById('image');
+
+const btnAddMember = document.getElementById('addMemberButton');
+
 btnAddMember.addEventListener('click', function () {
     teamContainer.innerHTML = '';
 
@@ -70,10 +71,12 @@ btnAddMember.addEventListener('click', function () {
     layOutGen (teamMembers, teamContainer);
 });
 
+
 /* 
 * FUNCTION
 */
 
+//Create a layout whith array elements
 function layOutGen (array, indexRef) {
     //Clean the HTML area
     indexRef.innerHTML = '';
@@ -81,7 +84,6 @@ function layOutGen (array, indexRef) {
     //Loop for each element of the array
     for (let i = 0; i < array.length; i++) {
         const arrayElement = array[i];
-        console.log(arrayElement);
 
         //Layout selected
         indexRef.innerHTML += `
