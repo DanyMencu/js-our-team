@@ -36,4 +36,40 @@ const teamMembers = [
         role: 'Graphic Designer',
     },
 ]
-console.log(teamMember);
+console.log(teamMembers);
+
+//* 2.
+
+ //Ref
+const teamContainer = document.querySelector('.team-container');
+
+layOutGen (teamMembers, teamContainer);
+
+/* 
+* FUNCTION
+*/
+
+function layOutGen (array, indexRef) {
+    //Clean the HTML area
+    indexRef.innerHTML = '';
+    
+    //Loop for each element of the array
+    for (let i = 0; i < array.length; i++) {
+        const arrayElement = array[i];
+        console.log(arrayElement);
+
+        //Layout selected
+        indexRef.innerHTML += `
+        <div class="team-card">
+            <div class="card-image">
+              <img src="${arrayElement.image}"
+                alt="${arrayElement.name}"/>
+            </div>
+            <div class="card-text">
+              <h3>${arrayElement.name}</h3>
+              <p>${arrayElement.role}</p>
+            </div>
+        </div>
+        `;
+    }
+}
